@@ -1,7 +1,7 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
 const moment = require('moment');
-const time = moment().format();
+const time = moment().format('YYYY_MM_DD_HH_mm_ss');
 
 const config = require('./config');
 const constants = require('./constants');
