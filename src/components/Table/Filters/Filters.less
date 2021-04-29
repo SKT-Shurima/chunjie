@@ -1,0 +1,61 @@
+.checkWrapper {
+  width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.text {
+  color: @primary-color;
+  cursor: pointer;
+  margin-left: 16px;
+  font-size: @font-size-m;
+}
+
+.listItem {
+  display: inline-block;
+  width: 100%;
+  line-height: 28px;
+  margin-left: 16px !important;
+}
+
+.filterDivider {
+  margin: 10px 0 0;
+}
+
+.filterEdits {
+  margin: 10px 0;
+}
+
+.filterModalContainer {
+  overflow: hidden;
+  .filterInput {
+    margin: 12px 16px;
+    width: 176px;
+    margin-bottom: 8px;
+    display: block;
+    height: 26px;
+  }
+
+  .filterBtnBox {
+    height: 38px;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+
+    .filterBtn {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+
+      &:nth-of-type(1) {
+        color: @font-color;
+      }
+
+      &:nth-of-type(2) {
+        color: @primary-color;
+      }
+    }
+  }
+}

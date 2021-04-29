@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.validate": [
+    { "language": "javascript", "autoFix": true },
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+  "eslint.autoFixOnSave": true,
+  "less.lint.validProperties": ["composes"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

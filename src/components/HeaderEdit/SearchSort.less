@@ -1,0 +1,112 @@
+.searchSortContainer {
+  :global {
+    .sup-btn-icon-only {
+      &:first-of-type {
+        width: 40px;
+      }
+
+      &:last-of-type {
+        width: 55px;
+        margin-left: 10px;
+      }
+    }
+
+    .sup-input-affix-wrapper {
+      width: 182px;
+      height: 30px;
+
+      .sup-input {
+        background-image: linear-gradient(0deg, #f2f4f7 0%, #fff 100%);
+        font-size: 12px;
+        color: #354052;
+      }
+    }
+
+    .sup-btn {
+      height: 30px !important;
+    }
+
+    .sup-popover-inner-content {
+      padding: 0;
+
+      .sup-popover-message {
+        padding: 12px 16px;
+      }
+
+      .sup-popover-buttons {
+        height: 38px;
+        border-top: 1px solid #dfe3e9;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+
+        button {
+          border: none;
+          background: transparent;
+          box-shadow: none;
+          outline: none;
+
+          &:visited {
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            outline: none;
+          }
+        }
+
+        .sup-btn-primary {
+          color: @primary-color;
+        }
+      }
+    }
+
+    .anticon {
+      &:nth-of-type(2) {
+        vertical-align: 2px;
+        margin-left: 6px;
+      }
+    }
+  }
+}
+
+.sortText {
+  width: 200px;
+  margin-left: -20px;
+  color: #333;
+  user-select: none;
+
+  .defaultValue {
+    text-decoration: underline;
+    font-size: 12px;
+  }
+
+  :global {
+    .sup-input-search {
+      margin-bottom: 10px;
+      input {
+        min-height: 26px;
+        height: 26px;
+        border: 1px solid #dce0e6;
+      }
+    }
+    .sup-spin-container {
+      height: calc(100vh - 300px);
+      overflow: scroll;
+      .sup-list-items {
+        margin-top: 10px;
+        font-size: 12px;
+
+        .sup-list-item {
+          border-bottom: none;
+          padding: 5px 0;
+
+          .sup-row {
+            width: 100%;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.leftContainer {
+  flex: 1;
+  padding: 20px;
+}
+.rightContainer {
+  width: 800px;
+  padding: 20px;
+}
+
+.labelWrapper {
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 32px;
+  & > label {
+    color: #333;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  & > div,
+  & > input {
+    flex: 1;
+  }
+}

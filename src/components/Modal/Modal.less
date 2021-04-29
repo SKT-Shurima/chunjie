@@ -1,0 +1,58 @@
+.globalModalContainer {
+  color: #fff;
+}
+
+.footer {
+  display: flex;
+
+  .defaultFooter {
+    width: 230px;
+
+    :global {
+      .sup-btn {
+        height: 36px;
+      }
+    }
+
+    .dialogOk {
+      width: 114px;
+      color: #fff;
+    }
+
+    .dialogClose {
+      width: 90px;
+      margin-left: 20px;
+      color: #354052;
+      background: transparent;
+      background-image: linear-gradient(0deg, #f2f4f7 0%, #fff 100%);
+      border: 1px solid #ced0da;
+    }
+  }
+}
+
+.otherFooter {
+  flex: 1;
+}
+
+:global {
+  .sup-modal {
+    .sup-modal-content {
+      .sup-modal-header {
+        height: 50px;
+        box-shadow: 0 1px 0 0 @border-color;
+        background-color: @bg-color;
+        border-bottom: none;
+
+        .sup-modal-title {
+          font-size: 16px;
+        }
+      }
+
+      .sup-modal-footer {
+        height: 60px;
+        padding: 11px 30px;
+        background: #f0f3f8;
+      }
+    }
+  }
+}

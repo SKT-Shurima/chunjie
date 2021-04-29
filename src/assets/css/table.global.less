@@ -1,0 +1,135 @@
+.globalTable {
+  padding: 20px 20px 0 20px;
+  flex: 1;
+
+  .sup-table-wrapper,
+  .sup-spin-nested-loading,
+  .sup-spin-container,
+  .sup-table-content,
+  .sup-table-scroll {
+    height: 100%;
+  }
+  .sup-table-scroll {
+    .sup-table-body {
+      height: calc(100% - 50px);
+    }
+    .sup-table-placeholder {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+    }
+  }
+  .sup-spin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sup-table {
+      flex: 1;
+    }
+  }
+
+  .sup-table-fixed-header {
+    background: #fff;
+  }
+
+  .sup-table-thead {
+    tr {
+      th {
+        cursor: pointer;
+        background: #fff;
+        color: @gray-color;
+        &:hover {
+          .anticon {
+            display: inline-block;
+          }
+          .sup-table-column-sorters {
+            .sup-table-column-sorter {
+              .sup-table-column-sorter-inner {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+          }
+        }
+
+        .anticon {
+          display: none;
+        }
+
+        .sup-table-header-column {
+          margin-right: 5px;
+        }
+
+        .sup-table-filter-icon {
+          right: auto;
+        }
+
+        .sup-table-column-sorters {
+          .sup-table-column-sorter {
+            .sup-table-column-sorter-inner {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .sup-table-column-has-sorters {
+        &:hover {
+          background: #fff !important;
+        }
+      }
+
+      .sup-table-column-has-filters {
+        &:hover {
+          i {
+            &:hover {
+              background: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sup-table-tbody {
+    tr {
+      td {
+        &.sup-table-column-sort {
+          background: rgba(0, 0, 0, 0);
+        }
+        color: #7f8fa4;
+        border-bottom: 1px solid #dfe2e5;
+      }
+    }
+  }
+
+  .sup-pagination {
+    .sup-pagination-total-text {
+      padding-left: 10px;
+    }
+
+    .sup-pagination-options {
+      padding-right: 10px;
+    }
+  }
+
+  //超链接默认样式
+  .defaultRowColor {
+    color: @font-color;
+  }
+
+  .sup-table-row-hover {
+    .defaultRowColor {
+      color: @info-color;
+
+      .sup-tooltip-open {
+        text-decoration: underline;
+      }
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}

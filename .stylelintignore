@@ -1,0 +1,10 @@
+/node_modules
+/**/*.md
+/**/*.ts
+/**/*.tsx
+/**/*.js
+*.js
+*.png
+*.eot
+*.ttf
+*.woff

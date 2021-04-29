@@ -1,0 +1,624 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'PingFangSC-Regular';
+  scrollbar-width: thin;
+  scrollbar-color: #aaa #ddd;
+}
+
+#app {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  color: @font-color;
+}
+
+dl,
+dt,
+dd,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: @white-color;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  z-index: 99;
+  background: transparent;
+
+  &-thumb {
+    // 滑块
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &-track {
+    margin: 4px 0;
+    border-radius: 8px;
+  }
+
+  &-corner {
+    // 边角
+    background: transparent;
+  }
+
+  &:hover {
+    width: 8px;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+
+.center-table {
+  table td {
+    text-align: center;
+  }
+
+  .sup-table-thead > tr > th {
+    text-align: center;
+  }
+}
+.sup-table-body {
+  table {
+    table-layout: fixed;
+  }
+}
+.supngin-small-table {
+  .sup-table-small > .sup-table-content > .sup-table-body {
+    margin: 0;
+
+    .sup-table-thead {
+      background-color: #f6f9fa;
+
+      tr > th {
+        color: #7f8fa4;
+      }
+    }
+  }
+}
+
+.sup-table-thead {
+  .sup-table-selection-column {
+    .sup-checkbox-wrapper {
+      .sup-checkbox-inner {
+        &::after {
+          background: #36af47;
+        }
+      }
+    }
+  }
+}
+
+.sup-table-wrapper {
+  .sup-table-header {
+    .sup-table-thead {
+      tr {
+        th {
+          padding: 7px 16px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .sup-table-body .sup-table-tbody,
+  .sup-table-fixed-right .sup-table-fixed {
+    tr {
+      td {
+        padding: 10px 16px;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.table-wrapper {
+  height: 100%;
+  padding: 20px;
+
+  .sup-table-wrapper {
+    height: 100%;
+    margin-bottom: -54px;
+  }
+}
+
+//暂无数据时
+.sup-table-scroll {
+  .sup-table-placeholder {
+    border-top: none;
+    border-bottom: none;
+
+    .sup-empty {
+      background: #fff;
+      margin-bottom: 20px;
+
+      .sup-empty-image {
+        height: 80px;
+        background: url('../../../../../assets/images/common/no-data.svg')
+          no-repeat 50% 0;
+
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.sup-spin-spinning {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  .sup-spin-dot.sup-spin-dot-spin {
+    margin-top: 25%;
+  }
+}
+
+.sup-modal-wrap {
+  .sup-modal {
+    .sup-modal-body {
+      padding: 20px 30px;
+    }
+  }
+}
+
+.sup-form {
+  .sup-row.sup-form-item {
+    margin-bottom: 16px;
+  }
+
+  .sup-form-item-label {
+    line-height: 24px;
+
+    label {
+      color: #7f8fa4;
+    }
+  }
+
+  .sup-radio-wrapper {
+    color: #7f8fa4;
+  }
+
+  .sup-form-item {
+    margin-bottom: 16px;
+  }
+
+  .sup-select-disabled {
+    .sup-select-selection {
+      background-color: #dfe2e5;
+
+      .sup-select-selection__rendered {
+        .sup-select-selection__choice {
+          background-color: #d5dce6;
+        }
+      }
+    }
+  }
+
+  .sup-input[disabled],
+  .sup-upload-disabled {
+    background-color: #dfe2e5;
+  }
+}
+
+//全局 button 样式
+button[type='button'].sup-btn {
+  height: 36px;
+  background-image: linear-gradient(0deg, #f2f4f7 0%, @white-color 100%);
+  border: 1px solid #ced0da;
+
+  &:hover {
+    background: @white-color;
+    border-color: @primary-color;
+  }
+}
+
+button[type='button'].sup-btn.sup-btn-primary {
+  background-image: linear-gradient(1deg, #1991e8 2%, #2da1f8 98%);
+  border: 1px solid #1a91e8;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+button[type='button'].sup-btn.sup-btn-primary[disabled] {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+// 全局radio 被选中默认样式
+.sup-radio-wrapper-checked {
+  .sup-radio-checked {
+    .sup-radio-inner {
+      background: #29b311;
+    }
+
+    .sup-radio-inner::after {
+      background-color: #fff;
+    }
+  }
+}
+
+/**
+* @components/Message  全局message样式
+*/
+.sup-message-notice {
+  .sup-message-custom-content {
+    display: flex;
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .sup-message-notice-content {
+    padding: 0;
+    color: #fff;
+    border-radius: 6px;
+
+    .sup-message-success {
+      background-color: #36af47;
+    }
+
+    .sup-message-error {
+      background-color: #ed1c24;
+    }
+
+    .sup-message-warning {
+      background-color: #f7981c;
+    }
+
+    .sup-message-loading {
+      background-color: #0f71e2;
+    }
+
+    .sup-message-info {
+      color: #333;
+    }
+
+    .sup-message-success,
+    .sup-message-error,
+    .sup-message-warning,
+    .sup-message-loading,
+    .sup-message-info {
+      padding: 10px;
+      border-radius: 4px;
+
+      i {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
+
+/**
+*  @components/Modal 全局Modal默认样式
+*/
+.sup-modal-content {
+  .sup-modal-confirm-body {
+    .sup-modal-confirm-title {
+      color: #fff;
+    }
+
+    .sup-modal-confirm-content {
+      color: #fff;
+    }
+
+    .sup-modal-confirm-btns {
+      .sup-btn-primary {
+        background-image: linear-gradient(#fff);
+        color: #354052;
+        border: none;
+      }
+    }
+  }
+  .sup-modal-close-x {
+    background: url('../../assets/images/common/modal_close.svg') no-repeat
+      center center;
+    i {
+      display: none;
+    }
+  }
+}
+
+// 全局switch 默认样式
+
+.sup-switch.sup-switch-checked {
+  background-color: #36af47;
+}
+
+.sup-checkbox-wrapper {
+  .sup-checkbox-checked {
+    .sup-checkbox-inner {
+      background-color: #36af47;
+      border-color: #36af47;
+
+      &::after {
+        border-color: #fff !important;
+      }
+    }
+  }
+}
+
+//全局分页默认样式
+.sup-pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  user-select: none;
+
+  .sup-pagination-item {
+    background: transparent;
+    border: none;
+    margin-right: 0;
+    min-width: 25px;
+    height: 25px;
+    a {
+      color: #171c22;
+    }
+  }
+
+  .sup-pagination-item-active {
+    a {
+      color: #0f71e2;
+    }
+  }
+
+  .sup-pagination-total-text {
+    flex: 1;
+    font-size: 12px;
+    color: #7c8691;
+  }
+
+  .sup-pagination-disabled {
+    color: #ced0da;
+    font-size: 12px;
+  }
+
+  .sup-pagination-next {
+    color: @font-color;
+  }
+
+  .sup-pagination-options {
+    font-size: 12px;
+    color: #2a3238;
+    height: 26px;
+    .sup-pagination-options-size-changer {
+      height: 100%;
+
+      .sup-select-selection {
+        height: 100%;
+
+        .sup-select-selection__rendered {
+          height: 100%;
+
+          .sup-select-selection-selected-value {
+            font-size: 12px;
+            color: #2a3238;
+            height: 100%;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 文字超出部分隐藏
+.ellipsis-1 {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.filter-mask {
+  background-color: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.sup-table-content {
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .sup-table-scroll {
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+  }
+}
+
+//全局input, select,  inputNumber 输入框默认高度为36px
+.sup-form-item-control-wrapper {
+  textarea.sup-input {
+    height: auto;
+  }
+  .sup-input {
+    height: 36px;
+  }
+
+  .sup-select {
+    //基本select, 单选
+    .sup-select-selection--single {
+      height: 36px;
+      .sup-select-selection__rendered {
+        height: 36px;
+
+        .sup-select-selection-selected-value {
+          height: 34px;
+          line-height: 34px;
+        }
+      }
+    }
+
+    //多选select
+    .sup-select-selection--multiple {
+      min-height: 36px;
+
+      .sup-select-selection__rendered {
+        min-height: 36px;
+
+        .sup-select-selection__choice {
+          min-height: 28px;
+          line-height: 26px;
+        }
+
+        .sup-select-selection-selected-value {
+          min-height: 34px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+
+  .sup-input-number {
+    height: 36px;
+
+    .sup-input-number-input {
+      height: 36px;
+    }
+  }
+}
+
+// 变量设置,(webService,restful)等功能内部table组件集成样式
+.customSource {
+  .sup-form-item {
+    margin: 0 !important;
+    .sup-form-item-control-wrapper {
+      .sup-form-item-control {
+        line-height: 0;
+
+        .sup-form-item-children {
+          .sup-input {
+            height: 24px;
+            padding: 0 5px;
+          }
+
+          .sup-time-picker-input {
+            width: 24px;
+          }
+
+          .sup-select-selection--single {
+            height: 24px;
+
+            .sup-select-selection__rendered {
+              height: 24px;
+
+              .sup-select-selection-selected-value {
+                height: 22px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sup-form-explain {
+      display: none;
+    }
+  }
+
+  .sup-table-placeholder {
+    width: 100%;
+    position: absolute;
+    border: none;
+  }
+}
+
+//解决超出文字部分隐藏
+.ellipsis-hide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.padding-right-10 {
+  padding-right: 10px !important;
+}
+//全局tooltip，如果文字太多就滚动展示数据
+.sup-tooltip-inner {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+//table组件 class默认继承父级的100%的高度
+.tableHeight {
+  .sup-table-wrapper {
+    height: 100%;
+
+    .sup-spin-nested-loading {
+      height: 100%;
+
+      .sup-spin-container {
+        height: 100%;
+
+        .sup-table {
+          height: 100%;
+
+          .sup-table-content {
+            height: 100%;
+
+            .sup-table-scroll {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.CodeMirror {
+  color: #7f8fa4;
+  background: #273142;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 5px;
+}
+
+.CodeMirror-gutters {
+  background: #273142;
+  border-right: 1px solid #313d4f;
+}
+.CodeMirror-cursor {
+  border-left-color: #fff;
+}
