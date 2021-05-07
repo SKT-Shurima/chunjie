@@ -15,7 +15,7 @@ importScripts("./workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "./workbox-v4.3.1"});
 
 importScripts(
-  "./precache-manifest.c51cf454c4be888aa239f4ea91dbfa84.js"
+  "./precache-manifest.4cef2abc9c963ec50c1feb9c4ec4ec76.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "supngin"});
